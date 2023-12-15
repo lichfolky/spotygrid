@@ -2,9 +2,14 @@
     --main-background: hsl(220 25% 10%);
     --font-color: white;
 
+    --link-color: var(--font-color);
+    --link-color-hover: deeppink;
+
+
     --main-nav-background: hsl(220 0% 0%);
     --main-nav-width: 200px;
     --main-nav-width-small: 50px;
+    --main-nav-icon-size: 30px;
 
     --upgrade-bar-background: hsl(220 25% 10% / 0.8);
     --upgrade-bar-height: 100px;
@@ -25,6 +30,7 @@
     margin: 0;
     padding: 0;
 }
+
 
 body {
     color: var(--font-color);
@@ -54,9 +60,38 @@ body {
     flex: 1;
 }
 
+.main-nav svg {
+    fill: var(--font-color);
+    width: var(--main-nav-icon-size);
+    height: var(--main-nav-icon-size);
+}
+
+.link-item a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.main-nav a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: var(--link-color-hover);
+}
+
+.main-nav a:hover svg {
+    fill: var(--link-color-hover);
+}
+
 @media(max-width: 600px) {
     :root {
         --main-nav-width: var(--main-nav-width-small);
+    }
+
+    .main-nav .item-text {
+        display: none;
     }
 }
 

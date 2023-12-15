@@ -1,0 +1,68 @@
+:root {
+    --main-background: hsl(219, 26%, 11%);
+    --font-color: white;
+
+    --main-nav-background: hsl(0, 0%, 0%);
+    --main-nav-width: 200px;
+    --main-nav-width-small: 10px;
+
+    --upgrade-bar-background: hsl(0, 0%, 16%, 0.5);
+    --upgrade-bar-height: 100px;
+
+    --player-background: hsl(0, 0%, 16%);
+    --player-height: 100px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--font-color);
+}
+
+.main-nav {
+    background-color: var(--main-nav-background);
+    width: var(--main-nav-width);
+    grid-area: aside;
+    overflow: hidden;
+}
+
+.app-wrapper {
+    display: grid;
+    grid-template:
+        "aside main " 1fr
+        "play play" var(--player-height) / var(--main-nav-width) 1fr;
+    height: 100dvh;
+}
+
+main {
+    background-color: var(--main-background);
+    grid-area: main;
+    overflow: auto;
+    overscroll-behavior: none;
+}
+
+.player {
+    grid-area: play;
+    background-color: var(--player-background);
+}
+
+.upgrade-bar {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 1rem;
+    height: var(--upgrade-bar-height);
+    background-color: var(--upgrade-bar-background);
+}

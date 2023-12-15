@@ -13,9 +13,14 @@
 
     --upgrade-bar-background: hsl(220 25% 10% / 0.8);
     --upgrade-bar-height: 100px;
+    --upgrade-bar-height: auto;
 
     --player-background: hsl(0 0% 16%);
     --player-height: 100px;
+    --player-height: auto;
+
+    --progress-bar-width: 400px;
+
 }
 
 /* RESET */
@@ -91,7 +96,12 @@ body {
     }
 
     .main-nav .item-text {
+        opacity: 0;
+    }
+
+    .main-nav .playlist {
         display: none;
+
     }
 }
 
@@ -110,7 +120,9 @@ main .upgrade-bar {
     display: flex;
     align-items: center;
     justify-content: end;
-    padding-right: 1rem;
+    padding-right: 16px;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
     height: var(--upgrade-bar-height);
     background-color: var(--upgrade-bar-background);
 }
@@ -122,6 +134,20 @@ main .upgrade-bar {
     background-color: var(--player-background);
     display: flex;
     justify-content: space-between;
+    justify-items: center;
     align-items: center;
     padding: 0 16px;
+    gap: 8px;
+}
+
+.player-bar {
+    flex: 1;
+    max-width: var(--progress-bar-width);
+    padding: 1rem 0;
+}
+
+.progress-bar {
+    height: 5px;
+    border-radius: 5px;
+    background-color: var(--font-color);
 }
